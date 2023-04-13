@@ -40,6 +40,7 @@ numpy==1.23.4
 packaging==21.3
 pandas==1.5.1
 pefile==2022.5.30
+requests==2.26.0
 pickleshare==0.7.5
 sparqlwrapper==1.8.5
 Pillow==9.2.0
