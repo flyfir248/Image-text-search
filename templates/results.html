@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Image Search Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/result.css') }}">
+  </head>
+  <body>
+    <h1>Image Search Results</h1>
+    {% if image_paths %}
+      <ul>
+        {% for image_path in image_paths %}
+          <li><img src="{{ image_path }}" /></li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No images found.</p>
+    {% endif %}
+  </body>
+</html>
