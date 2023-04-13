@@ -65,4 +65,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ![img_4.png](img_4.png)
 - ---
 -- ---
-
+![star-line-divider-design-footer-modern-border-vector-23980591.png](star-line-divider-design-footer-modern-border-vector-23980591.png)
