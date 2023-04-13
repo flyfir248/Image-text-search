@@ -121,5 +121,5 @@ def fetch_images(original_string):
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=5000)
 
