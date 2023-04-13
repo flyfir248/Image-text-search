@@ -41,6 +41,7 @@ packaging==21.3
 pandas==1.5.1
 pefile==2022.5.30
 pickleshare==0.7.5
+sparqlwrapper==1.8.5
 Pillow==9.2.0
 platformdirs==2.6.0
 pure-eval==0.2.2
