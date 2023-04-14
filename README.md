@@ -36,6 +36,8 @@ will be available for 8 hours for tests and use cases:
 ![img_5.png](img_5.png)
 
 - --
+### https://dashboard.render.com/web/srv-cgsfes0rddl5dqtaidfg/logs
+- --
 - --
 # Usage
 Navigate to http://localhost:5000 in your web browser.
