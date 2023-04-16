@@ -10,3 +10,4 @@ setuptools
 pip==22.2.2
 Pillow
 fonttools==4.38.0
+beautifulsoup4

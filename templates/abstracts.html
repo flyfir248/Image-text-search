@@ -1,0 +1,16 @@
+<!-- abstracts.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Abstracts</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/result.css') }}">
+</head>
+<body>
+    {% if abstracts %}
+        <h1>Abstract</h1>
+        <p>{{ abstracts }}</p>
+    {% else %}
+        <p>No abstract found for this input.</p>
+    {% endif %}
+</body>
+</html>

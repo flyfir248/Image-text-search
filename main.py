@@ -1,5 +1,6 @@
 from SPARQLWrapper import SPARQLWrapper, JSON
 from flask import Flask, render_template, request
+from bs4 import BeautifulSoup
 import re
 import requests
 
@@ -19,7 +20,7 @@ endpoint = "http://dbpedia.org/sparql"
 sparql = SPARQLWrapper(endpoint)
 
 app = Flask(__name__)
-
+app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 @app.route('/')
 def index():
@@ -118,6 +119,29 @@ def fetch_images(original_string):
 
     return link_image
 
+
+@app.route('/abstract', methods=['POST'])
+def abstract():
+    input_text = request.form['input_text']
+
+    input_text = '_'.join(input_text.split()).title()  # if wrong format is entered then a correct format is added
+
+    dbpedia_url = f"http://dbpedia.org/sparql"
+    sparql_query = f"""
+        PREFIX dbo: <http://dbpedia.org/ontology/>
+        SELECT ?abstract
+        WHERE {{
+            <http://dbpedia.org/resource/{input_text}> dbo:abstract ?abstract .
+            FILTER langMatches(lang(?abstract),"en")
+        }}
+    """
+    response = requests.get(dbpedia_url, params={'query': sparql_query})
+    soup = BeautifulSoup(response.text, 'html.parser')
+    abstracts = [str(a) for a in soup.find_all('literal')]
+    #print(abstracts)
+    sentence = abstracts[0].split('>')[1]
+    val = sentence.split('<')[0]
+    return render_template('abstracts.html', abstracts=val)
 
 
 if __name__ == '__main__':
