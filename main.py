@@ -126,6 +126,8 @@ def abstract():
 
     input_text = '_'.join(input_text.split()).title()  # if wrong format is entered then a correct format is added
 
+    input_text= input_text.replace(';', '. ')
+
     dbpedia_url = f"http://dbpedia.org/sparql"
     sparql_query = f"""
         PREFIX dbo: <http://dbpedia.org/ontology/>
@@ -141,6 +143,9 @@ def abstract():
     #print(abstracts)
     sentence = abstracts[0].split('>')[1]
     val = sentence.split('<')[0]
+
+
+
     return render_template('abstracts.html', abstracts=val)
 
 

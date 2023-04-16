@@ -3,12 +3,15 @@
 <html>
 <head>
     <title>Abstracts</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/result.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/abstracts.css') }}">
 </head>
 <body>
     {% if abstracts %}
         <h1>Abstract</h1>
-        <p>{{ abstracts }}</p>
+        {% for paragraph in abstracts.split('\n') %}
+            <p>{{ paragraph }}</p>
+            <br>
+        {% endfor %}
     {% else %}
         <p>No abstract found for this input.</p>
     {% endif %}
