@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My 3D Model Viewer</title>
+    <script src="https://modelviewer.dev/shared/modelviewer.js"></script>
+  </head>
+  <body>
+    <p>There should be a 3D model here:</p>
+    <model-viewer src="templates/Anoop3D.glb"
+                  alt="A 3D model of my name"
+                  auto-rotate
+                  camera-controls
+                  ar
+                  ar-modes="webxr scene-viewer quick-look"
+                  ar-scale="auto">
+      <p>Your browser does not support the <code>&lt;model-viewer&gt;</code> element.</p>
+    </model-viewer>
+  </body>
+</html>
