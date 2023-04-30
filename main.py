@@ -10,8 +10,8 @@ from googleapiclient.discovery import build
 import urllib.request
 import os
 
-api_key = "AIzaSyByNyz_xPqUxE5rshTel0uzdAZL_0Lttr8"
-cx = "511c17a6333064baa"
+api_key = "----------------------------------"
+cx = "-------------------------"
 
 service = build("customsearch", "v1", developerKey=api_key)
 # --------------------------------
